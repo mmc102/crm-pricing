@@ -29,6 +29,7 @@ cursor.execute("""
     JOIN companies ON plans.company_id = companies.company_id
 """)
 pricing_data = cursor.fetchall()
+print(pricing_data)
 generation_date = datetime.now().strftime("%Y-%m-%d")
 
 
