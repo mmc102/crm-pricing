@@ -20,6 +20,9 @@
             cursor: pointer;
             position: relative;
         }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
         .sort-icon {
             margin-left: 10px;
             font-size: 0.8em;
@@ -31,28 +34,25 @@
             text-align: center;
         }
     </style>
-    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "WebPage",
       "name": "CRM Pricing",
       "description": "Compare CRM pricing plans from leading providers. Find the best CRM software for your business needs with detailed pricing and feature comparisons. No JavaScript required for core functionality.",
-      "url": "https://www.yoursite.com/crm-pricing"
     }
     </script>
 </head>
 <body>
     <h1>CRM Pricing</h1>
-    <p>Pricing for SaaS products, all in one page in the most anti-SaaS way possible. You don't need to run JavaScript for the page to work (currently it's used for sorting). There is no chatbot icon.</p>
+    <p>Saas pricing without a chatbot icon.</p>
     <table id="pricingTable">
         <thead>
             <tr>
                 <th onclick="sortTable(0)">Company <span class="sort-icon">⇅</span></th>
                 <th onclick="sortTable(1)">Plan <span class="sort-icon">⇅</span></th>
-                <th onclick="sortTable(2)">Price <span class="sort-icon">⇅</span></th>
-                <th onclick="sortTable(3)">Currency <span class="sort-icon">⇅</span></th>
-                <th onclick="sortTable(4)">Billing Cycle <span class="sort-icon">⇅</span></th>
+                <th onclick="sortTable(2)">Price ($) <span class="sort-icon">⇅</span></th>
+                <th onclick="sortTable(3)">Billing Cycle <span class="sort-icon">⇅</span></th>
             </tr>
         </thead>
         <tbody>
@@ -60,9 +60,14 @@
             <tr>
                 <td>{{ row[0] }}</td>
                 <td>{{ row[1] }}</td>
-                <td>{{ row[2] }}</td>
-                <td>{{ row[3] }}</td>
-                <td>{{ row[4] }}</td>
+                <td>
+                    {% if row[4] == 'Contact Sales' %}
+                    Over 9000
+                    {% else %}
+                    {{ row[2] }}
+                    {% endif %}
+                </td>
+                <td>{{ row[4] }}</td> <!-- Adjusted index since Currency column is removed -->
             </tr>
             {% endfor %}
         </tbody>
@@ -124,14 +129,16 @@
                     return 0;
                 });
 
+                // Set the appropriate sort icon
                 headers[columnIndex].querySelector('.sort-icon').innerText = newOrder === 'asc' ? '↑' : '↓';
             }
 
+            // Append sorted rows to the table body
             rows.forEach(row => tbody.appendChild(row));
 
+            // Set the new sorting order
             table.dataset.sortOrder = newOrder;
         }
     </script>
 </body>
 </html>
-

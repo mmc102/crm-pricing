@@ -20,6 +20,9 @@
             cursor: pointer;
             position: relative;
         }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
         .sort-icon {
             margin-left: 10px;
             font-size: 0.8em;
@@ -31,150 +34,192 @@
             text-align: center;
         }
     </style>
-    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "WebPage",
       "name": "CRM Pricing",
       "description": "Compare CRM pricing plans from leading providers. Find the best CRM software for your business needs with detailed pricing and feature comparisons. No JavaScript required for core functionality.",
-      "url": "https://www.yoursite.com/crm-pricing"
     }
     </script>
 </head>
 <body>
     <h1>CRM Pricing</h1>
-    <p>Pricing for SaaS products, all in one page in the most anti-SaaS way possible. You don't need to run JavaScript for the page to work (currently it's used for sorting). There is no chatbot icon.</p>
+    <p>Saas pricing without a chatbot icon.</p>
     <table id="pricingTable">
         <thead>
             <tr>
                 <th onclick="sortTable(0)">Company <span class="sort-icon">⇅</span></th>
                 <th onclick="sortTable(1)">Plan <span class="sort-icon">⇅</span></th>
-                <th onclick="sortTable(2)">Price <span class="sort-icon">⇅</span></th>
-                <th onclick="sortTable(3)">Currency <span class="sort-icon">⇅</span></th>
-                <th onclick="sortTable(4)">Billing Cycle <span class="sort-icon">⇅</span></th>
+                <th onclick="sortTable(2)">Price ($) <span class="sort-icon">⇅</span></th>
+                <th onclick="sortTable(3)">Billing Cycle <span class="sort-icon">⇅</span></th>
             </tr>
         </thead>
         <tbody>
             
             <tr>
                 <td>Salesforce for Small Business</td>
-                <td>Starter Suite</td>
-                <td>25.00</td>
-                <td>USD</td>
-                <td>User/Month</td>
-            </tr>
-            
-            <tr>
-                <td>Salesforce for Small Business</td>
                 <td>Pro Suite</td>
-                <td>100.00</td>
-                <td>USD</td>
-                <td>User/Month (Billed annually)</td>
+                <td>
+                    
+                    100.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
             </tr>
             
             <tr>
                 <td>Salesforce for Sales</td>
                 <td>Enterprise</td>
-                <td>500.00</td>
-                <td>USD</td>
-                <td>User/Month (Billed annually)</td>
-            </tr>
-            
-            <tr>
-                <td>Monday.com</td>
-                <td>Free</td>
-                <td>0.00</td>
-                <td>USD</td>
-                <td>monthly</td>
-            </tr>
-            
-            <tr>
-                <td>Monday.com</td>
-                <td>Basic</td>
-                <td>9.00</td>
-                <td>USD</td>
-                <td>monthly</td>
-            </tr>
-            
-            <tr>
-                <td>Monday.com</td>
-                <td>Standard</td>
-                <td>12.00</td>
-                <td>USD</td>
-                <td>monthly</td>
-            </tr>
-            
-            <tr>
-                <td>Monday.com</td>
-                <td>Pro</td>
-                <td>20.00</td>
-                <td>USD</td>
-                <td>monthly</td>
-            </tr>
-            
-            <tr>
-                <td>Monday.com</td>
-                <td>Enterprise</td>
-                <td>0.00</td>
-                <td>USD</td>
-                <td>contact sales</td>
-            </tr>
-            
-            <tr>
-                <td>Pipedrive</td>
-                <td>Essential</td>
-                <td>14.00</td>
-                <td>USD</td>
-                <td>Per seat per month, billed annually</td>
-            </tr>
-            
-            <tr>
-                <td>Pipedrive</td>
-                <td>Advanced</td>
-                <td>29.00</td>
-                <td>USD</td>
-                <td>Per seat per month, billed annually</td>
-            </tr>
-            
-            <tr>
-                <td>Pipedrive</td>
-                <td>Professional</td>
-                <td>49.00</td>
-                <td>USD</td>
-                <td>Per seat per month, billed annually</td>
-            </tr>
-            
-            <tr>
-                <td>Pipedrive</td>
-                <td>Power</td>
-                <td>64.00</td>
-                <td>USD</td>
-                <td>Per seat per month, billed annually</td>
-            </tr>
-            
-            <tr>
-                <td>Pipedrive</td>
-                <td>Enterprise</td>
-                <td>99.00</td>
-                <td>USD</td>
-                <td>Per seat per month, billed annually</td>
+                <td>
+                    
+                    500.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
             </tr>
             
             <tr>
                 <td>Salesforce for Sales</td>
                 <td>Enterprise</td>
-                <td>165.00</td>
-                <td>USD</td>
-                <td>User/Month (Billed annually)</td>
+                <td>
+                    
+                    165.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
             </tr>
             
             <tr>
                 <td>Salesforce for Sales</td>
                 <td>Unlimited</td>
-                <td>330.00</td>
-                <td>USD</td>
-                <td>User/Month (Billed annually)</td>
+                <td>
+                    
+                    330.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Monday.com</td>
+                <td>Free</td>
+                <td>
+                    
+                    0.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Monday.com</td>
+                <td>Basic</td>
+                <td>
+                    
+                    9.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Monday.com</td>
+                <td>Standard</td>
+                <td>
+                    
+                    12.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Monday.com</td>
+                <td>Pro</td>
+                <td>
+                    
+                    20.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Pipedrive</td>
+                <td>Essential</td>
+                <td>
+                    
+                    14.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Pipedrive</td>
+                <td>Advanced</td>
+                <td>
+                    
+                    29.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Pipedrive</td>
+                <td>Professional</td>
+                <td>
+                    
+                    49.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Pipedrive</td>
+                <td>Power</td>
+                <td>
+                    
+                    64.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Pipedrive</td>
+                <td>Enterprise</td>
+                <td>
+                    
+                    99.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Salesforce for Small Business</td>
+                <td>Starter Suite</td>
+                <td>
+                    
+                    25.00
+                    
+                </td>
+                <td>User/Month (Billed annually)</td> <!-- Adjusted index since Currency column is removed -->
+            </tr>
+            
+            <tr>
+                <td>Monday.com</td>
+                <td>Enterprise</td>
+                <td>
+                    
+                    Over 9000
+                    
+                </td>
+                <td>Contact Sales</td> <!-- Adjusted index since Currency column is removed -->
             </tr>
             
         </tbody>
@@ -236,11 +281,14 @@
                     return 0;
                 });
 
+                // Set the appropriate sort icon
                 headers[columnIndex].querySelector('.sort-icon').innerText = newOrder === 'asc' ? '↑' : '↓';
             }
 
+            // Append sorted rows to the table body
             rows.forEach(row => tbody.appendChild(row));
 
+            // Set the new sorting order
             table.dataset.sortOrder = newOrder;
         }
     </script>
