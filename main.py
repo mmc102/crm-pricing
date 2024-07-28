@@ -45,9 +45,9 @@ template = env.get_template('pricing_table.html')
 output = template.render(pricing_data=pricing_data, generation_date=generation_date)
 
 # Save the output to an HTML file
-output_directory = 'output'
+output_directory = '.'
 os.makedirs(output_directory, exist_ok=True)
-with open(os.path.join(output_directory, 'pricing_table.html'), 'w') as f:
+with open(os.path.join(output_directory, 'index.html'), 'w') as f:
     f.write(output)
 
 print("HTML file generated successfully.")
