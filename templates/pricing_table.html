@@ -61,13 +61,13 @@
                 <td>{{ row[0] }}</td>
                 <td>{{ row[1] }}</td>
                 <td>
-                    {% if row[4] == 'Contact Sales' %}
+                    {% if row[3] == 'Contact Sales' %}
                     Over 9000
                     {% else %}
                     {{ row[2] }}
                     {% endif %}
                 </td>
-                <td>{{ row[4] }}</td> <!-- Adjusted index since Currency column is removed -->
+                <td>{{ row[3] }}</td> 
             </tr>
             {% endfor %}
         </tbody>

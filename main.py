@@ -20,13 +20,11 @@ cursor = conn.cursor()
 cursor.execute("""
     SELECT
         companies.company_name,
-        plans.plan_name,
-        pricing.price,
-        pricing.currency,
-        pricing.billing_cycle
-    FROM pricing
-    JOIN plans ON pricing.plan_id = plans.plan_id
-    JOIN companies ON plans.company_id = companies.company_id
+        plans_with_pricing.plan_name,
+        plans_with_pricing.price,
+        plans_with_pricing.billing_cycle
+    FROM plans_with_pricing
+    JOIN companies ON plans_with_pricing.company_id = companies.company_id
 """)
 pricing_data = cursor.fetchall()
 print(pricing_data)
